@@ -20,8 +20,8 @@ From the data set in step 4, creates a second, independent tidy data set with th
 Once downloaded and unzipped, sourcing and running the run_analyis.R script in the same working directory as the unzipped raw data set will produce the tidy data set required by the assignment.
 
 run_analysis.R assumes the data set is in the working directory and the file structure is unalterted.
-XXXXX
-See the README.txt and the features_info.txt files in the UCI HAR Dataset folders for details on the original data and variables.
+
+See also the README.txt and the features_info.txt files in the UCI HAR Dataset folders for details on the original data and variables.
 
 Original Data Used
 
@@ -103,30 +103,46 @@ representing the 6 activities in which subjects enagaged to generate the observa
 subject: int 1:30
 representing the 30 subjects that participated in the trials generating the observational data. One row of data is generated for each of the 6 x 30 combinations of activites and subjects.
 
-For each activity/subject combination, averages of all observations for each of the 33 mean() and std() time and frequency domain signals are calculated. The resulting 66 variables are:
+For each activity/subject combination, averages of all observations for each of the mean() and std() time and frequency domain signals are calculated. The resulting variables are:
 
- [1] "tbodyacc-mean-x-ave"           "tbodyacc-mean-y-ave"           "tbodyacc-mean-z-ave"          
- [4] "tbodyacc-std-x-ave"            "tbodyacc-std-y-ave"            "tbodyacc-std-z-ave"           
- [7] "tgravityacc-mean-x-ave"        "tgravityacc-mean-y-ave"        "tgravityacc-mean-z-ave"       
-[10] "tgravityacc-std-x-ave"         "tgravityacc-std-y-ave"         "tgravityacc-std-z-ave"        
-[13] "tbodyaccjerk-mean-x-ave"       "tbodyaccjerk-mean-y-ave"       "tbodyaccjerk-mean-z-ave"      
-[16] "tbodyaccjerk-std-x-ave"        "tbodyaccjerk-std-y-ave"        "tbodyaccjerk-std-z-ave"       
-[19] "tbodygyro-mean-x-ave"          "tbodygyro-mean-y-ave"          "tbodygyro-mean-z-ave"         
-[22] "tbodygyro-std-x-ave"           "tbodygyro-std-y-ave"           "tbodygyro-std-z-ave"          
-[25] "tbodygyrojerk-mean-x-ave"      "tbodygyrojerk-mean-y-ave"      "tbodygyrojerk-mean-z-ave"     
-[28] "tbodygyrojerk-std-x-ave"       "tbodygyrojerk-std-y-ave"       "tbodygyrojerk-std-z-ave"      
-[31] "tbodyaccmag-mean-ave"          "tbodyaccmag-std-ave"           "tgravityaccmag-mean-ave"      
-[34] "tgravityaccmag-std-ave"        "tbodyaccjerkmag-mean-ave"      "tbodyaccjerkmag-std-ave"      
-[37] "tbodygyromag-mean-ave"         "tbodygyromag-std-ave"          "tbodygyrojerkmag-mean-ave"    
-[40] "tbodygyrojerkmag-std-ave"      "fbodyacc-mean-x-ave"           "fbodyacc-mean-y-ave"          
-[43] "fbodyacc-mean-z-ave"           "fbodyacc-std-x-ave"            "fbodyacc-std-y-ave"           
-[46] "fbodyacc-std-z-ave"            "fbodyaccjerk-mean-x-ave"       "fbodyaccjerk-mean-y-ave"      
-[49] "fbodyaccjerk-mean-z-ave"       "fbodyaccjerk-std-x-ave"        "fbodyaccjerk-std-y-ave"       
-[52] "fbodyaccjerk-std-z-ave"        "fbodygyro-mean-x-ave"          "fbodygyro-mean-y-ave"         
-[55] "fbodygyro-mean-z-ave"          "fbodygyro-std-x-ave"           "fbodygyro-std-y-ave"          
-[58] "fbodygyro-std-z-ave"           "fbodyaccmag-mean-ave"          "fbodyaccmag-std-ave"          
-[61] "fbodybodyaccjerkmag-mean-ave"  "fbodybodyaccjerkmag-std-ave"   "fbodybodygyromag-mean-ave"    
-[64] "fbodybodygyromag-std-ave"      "fbodybodygyrojerkmag-mean-ave" "fbodybodygyrojerkmag-std-ave" 
+tBodyAcc-mean()-X
+tBodyAcc-mean()-Y
+tBodyAcc-mean()-Z
+tBodyAcc-std()-X
+tBodyAcc-std()-Y
+tBodyAcc-std()-Z
+tGravityAcc-mean()-X
+tGravityAcc-mean()-Y
+tGravityAcc-mean()-Z
+tGravityAcc-std()-X
+tGravityAcc-std()-Y
+tGravityAcc-std()-Z
+tBodyAccJerk-mean()-X
+tBodyAccJerk-mean()-Y
+tBodyAccJerk-mean()-Z
+tBodyAccJerk-std()-X
+tBodyAccJerk-std()-Y
+tBodyAccJerk-std()-Z
+tBodyGyro-mean()-X
+tBodyGyro-mean()-Y
+tBodyGyro-mean()-Z
+tBodyGyro-std()-X
+tBodyGyro-std()-Y
+tBodyGyro-std()-Z
+tBodyGyroJerk-mean()-X
+tBodyGyroJerk-mean()-Y
+tBodyGyroJerk-mean()-Z
+tBodyGyroJerk-std()-X
+tBodyGyroJerk-std()-Y
+tBodyGyroJerk-std()-Z
+tBodyAccMag-mean()
+tBodyAccMag-std()
+tGravityAccMag-mean()
+tGravityAccMag-std()
+tBodyAccJerkMag-mean()
+tBodyAccJerkMag-std()
+tBodyGyroMag-mean()
+
 All are numeric variables, each the average of all observations of the original UCI HAR variables for the given activity and subject. Since each observation is normalized to a range of [-1,1], so too the 66 signal variables of the Tidy Data Set fall within the range [-1,1].
 
-The naming convention for the averaged variable names is the original variable name stripped of parenthases, converted to all lower case, and appended with "-ave".
+
