@@ -5,7 +5,9 @@
 ## 3. Uses descriptive activity names to name the activities in the data set
 ## 4. Appropriately labels the data set with descriptive activity names.
 ## 5. Creates a second, independent tidy data set with the average of each variable for each activity and each subject.
-
+#You need the packages data.table and reshape2
+library(data.table)
+library(reshape2)
 # Load: activity labels from the dir "UCI HAR Dataset"
 activity_labels <- read.table("./UCI HAR Dataset/activity_labels.txt")[,2]
 # Load: data column names from the dir "UCI HAR Dataset"
@@ -62,4 +64,4 @@ write.table(tidy_data, file = "tidy_data.txt", row.names=FALSE)
 #This is to control that it has worked
 koll<-read.table("tidy_data.txt", header=TRUE)
 #print "tidy_data_.txt"
-koll
+head(koll)
